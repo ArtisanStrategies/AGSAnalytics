@@ -30,6 +30,12 @@ enum ProjectType {
   backend
 }
 
+enum FlowType {
+  registration
+  payment
+  activation
+}
+
 model Chat {
   id        String   @id @default(dbgenerated("gen_random_uuid()"))
   messages  Json
@@ -190,6 +196,10 @@ model Project {
 
   notificationRules NotificationRule[]
   notifications     Notification[]
+
+  // AGS Analytics specific
+  templates ProjectTemplate[]
+  flowEvents FlowEvent[]
 
   // When deleteAt > now(), the project will be deleted
   deleteAt DateTime?
@@ -436,4 +446,38 @@ model ResetPassword {
   updatedAt DateTime @default(now()) @updatedAt
 
   @@map("reset_password")
+}
+
+model ProjectTemplate {
+  id          String   @id @default(dbgenerated("gen_random_uuid()"))
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  templateId  String   // 'registration', 'payment', 'activation'
+  templateName String
+  isApplied   Boolean  @default(false)
+  appliedAt   DateTime?
+  config      Json?    // Template-specific configuration
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+
+  @@unique([projectId, templateId])
+  @@map("project_templates")
+}
+
+model FlowEvent {
+  id          String   @id @default(dbgenerated("gen_random_uuid()"))
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  flowType    FlowType
+  eventName   String
+  eventData   Json     // Event properties and metadata
+  userId      String?
+  sessionId   String?
+  timestamp   DateTime
+  stepOrder   Int?     // Order in the flow sequence
+  createdAt   DateTime @default(now())
+
+  @@index([projectId, flowType, timestamp])
+  @@index([userId, flowType])
+  @@map("flow_events")
 }

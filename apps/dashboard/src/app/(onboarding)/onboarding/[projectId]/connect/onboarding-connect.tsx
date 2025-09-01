@@ -4,7 +4,8 @@ import { ButtonContainer } from '@/components/button-container';
 import CopyInput from '@/components/forms/copy-input';
 import { LinkButton } from '@/components/ui/button';
 import { useClientSecret } from '@/hooks/useClientSecret';
-import { LockIcon } from 'lucide-react';
+import { TemplatesManager } from '@/components/templates';
+import { LockIcon, Sparkles } from 'lucide-react';
 
 import type { IServiceProjectWithClients } from '@openpanel/db';
 
@@ -53,6 +54,25 @@ const Connect = ({ project }: Props) => {
 
         return <Component key={type} client={{ ...client, secret }} />;
       })}
+
+      {/* AGS Analytics Templates */}
+      <div className="flex flex-col gap-4 rounded-xl border p-4 md:p-6 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
+        <div className="flex items-center gap-2 text-2xl capitalize">
+          <Sparkles className="text-yellow-500" />
+          AGS Analytics Templates
+        </div>
+        <p className="text-muted-foreground">
+          Choose pre-configured templates to automatically set up tracking for common user flows.
+          These templates include events, funnels, and metrics tailored for SaaS analytics.
+        </p>
+        <TemplatesManager
+          onTemplateApplied={(templateType) => {
+            console.log(`Template applied: ${templateType}`);
+            // TODO: Implement template application logic
+          }}
+        />
+      </div>
+
       <ButtonContainer>
         <div />
         <LinkButton
