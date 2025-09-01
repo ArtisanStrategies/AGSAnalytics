@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/sdk-info",
+  "name": "@ags-analytics/sdk-info",
   "version": "0.0.1",
   "main": "index.ts",
   "scripts": {

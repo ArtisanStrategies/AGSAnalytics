@@ -1,9 +1,9 @@
 {
-  "name": "@openpanel/cli",
+  "name": "@ags-analytics/cli",
   "version": "0.0.1-beta",
   "module": "index.ts",
   "bin": {
-    "openpanel": "dist/bin/cli.js"
+    "ags-analytics": "dist/bin/cli.js"
   },
   "scripts": {
     "build": "rm -rf dist && tsup",

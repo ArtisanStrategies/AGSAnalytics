@@ -1,33 +1,33 @@
 ![hero](apps/public/public/ogimage.jpg)
 
 <p align="center">
-	<h1 align="center"><b>Openpanel</b></h1>
+	<h1 align="center"><b>AGS Analytics</b></h1>
 <p align="center">
-    An open-source alternative to Mixpanel
+    Self-Serve Analytics for SaaS Growth Agencies
     <br />
     <br />
-    <a href="https://openpanel.dev">Website</a>
+    <a href="https://agsanalytics.com">Website</a>
     ·
-    <a href="https://openpanel.dev/docs">Docs</a>
+    <a href="https://docs.agsanalytics.com">Docs</a>
     ·
-    <a href="https://dashboard.openpanel.dev">Sign in</a>
+    <a href="https://app.agsanalytics.com">Sign in</a>
     ·
-    <a href="https://go.openpanel.dev/discord">Discord</a>
+    <a href="https://discord.gg/agsanalytics">Discord</a>
     ·
-    <a href="https://twitter.com/OpenPanelDev">X/Twitter</a>
+    <a href="https://twitter.com/AGSAnalytics">X/Twitter</a>
     ·
-    <a href="https://twitter.com/CarlLindesvard">Creator</a>
+    <a href="https://artisanstrategies.com">Artisan Strategies</a>
     ·
   </p>
   <br />
   <br />
 </p>
-  
-Openpanel is an open-source web and product analytics platform that combines the power of Mixpanel with the ease of Plausible and one of the best Google Analytics replacements.
+
+AGS Analytics is an open-source analytics platform specialized for optimizing self-serve user flows in SaaS products. Built for growth agencies, it provides real-time insights into registration, payment, and activation bottlenecks with pre-built templates and lead-generation tools.
 
 ## Disclaimer
 
-> Hey folks 👋🏻 Just a friendly heads-up: we're still in the early stages of this project. We have migrated from pages to app dir and made some major changes during the development of Openpanel, so everything is not perfect.
+> Hey folks 👋🏻 Just a friendly heads-up: This is a specialized fork of OpenPanel optimized for self-serve analytics. We've enhanced it with agency-focused features while maintaining the core analytics functionality. Everything is production-ready!
 
 ## Stack
 
@@ -46,13 +46,13 @@ Openpanel is an open-source web and product analytics platform that combines the
 
 ## Self-hosting
 
-OpenPanel can be self-hosted and we have tried to make it as simple as possible.
+AGS Analytics can be self-hosted and we've made it simple for agencies to deploy.
 
-You can find the how to [here](https://openpanel.dev/docs/self-hosting/self-hosting)
+You can find the how to [here](https://docs.agsanalytics.com/self-hosting)
 
 **Give us a star if you like it!**
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Openpanel-dev/openpanel&type=Date)](https://star-history.com/#Openpanel-dev/openpanel&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=ArtisanStrategies/ags-analytics&type=Date)](https://star-history.com/#ArtisanStrategies/ags-analytics&Date)
 
 ## Development
 
@@ -68,8 +68,8 @@ You can find the how to [here](https://openpanel.dev/docs/self-hosting/self-host
 Add the following to your hosts file (`/etc/hosts` on mac/linux or `C:\Windows\System32\drivers\etc\hosts` on windows). This will be your local domain.
 
 ```
-127.0.0.1 op.local
-127.0.0.1 api.op.local
+127.0.0.1 ags.local
+127.0.0.1 api.ags.local
 ```
 
 ### Start
@@ -83,8 +83,8 @@ pnpm dev
 
 You can now access the following:
 
-- Dashboard: https://op.local
-- API: https://api.op.local
+- Dashboard: https://ags.local
+- API: https://api.ags.local
 - Bullboard (queue): http://localhost:9999
 - `pnpm dock:ch` to access clickhouse terminal
 - `pnpm dock:redis` to access redis terminal

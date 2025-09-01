@@ -12,7 +12,7 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'OpenPanel | An open-source alternative to Mixpanel',
+  title: 'AGS Analytics | Self-Serve Analytics for SaaS Growth',
 };
 
 // export const experimental_ppr = true;

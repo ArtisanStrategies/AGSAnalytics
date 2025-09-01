@@ -1,27 +1,27 @@
 version: '3'
 
 services:
-  op-proxy:
+  ags-proxy:
     image: caddy:2-alpine
     restart: always
     ports:
       - '80:80'
       - '443:443'
     volumes:
-      - op-proxy-data:/data
-      - op-proxy-config:/config
+      - ags-proxy-data:/data
+      - ags-proxy-config:/config
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
     depends_on:
-      op-dashboard:
+      ags-dashboard:
         condition: service_healthy
-      op-api:
+      ags-api:
         condition: service_healthy
 
-  op-db:
+  ags-db:
     image: postgres:14-alpine
     restart: always
     volumes:
-      - op-db-data:/var/lib/postgresql/data
+      - ags-db-data:/var/lib/postgresql/data
     healthcheck:
       test: [ 'CMD-SHELL', 'pg_isready -U postgres' ]
       interval: 10s
@@ -34,11 +34,11 @@ services:
     # ports:
     #   - 5432:5432
 
-  op-kv:
+  ags-kv:
     image: redis:7.2.5-alpine
     restart: always
     volumes:
-      - op-kv-data:/data
+      - ags-kv-data:/data
     command: [ 'redis-server', '--maxmemory-policy', 'noeviction' ]
     healthcheck:
       test: [ 'CMD-SHELL', 'redis-cli ping' ]
@@ -49,12 +49,12 @@ services:
     # ports:
     #   - 6379:6379
 
-  op-ch:
+  ags-ch:
     image: clickhouse/clickhouse-server:24.3.2-alpine
     restart: always
     volumes:
-      - op-ch-data:/var/lib/clickhouse
-      - op-ch-logs:/var/log/clickhouse-server
+      - ags-ch-data:/var/lib/clickhouse
+      - ags-ch-logs:/var/log/clickhouse-server
       - ./clickhouse/clickhouse-config.xml:/etc/clickhouse-server/config.d/op-config.xml:ro
       - ./clickhouse/clickhouse-user-config.xml:/etc/clickhouse-server/users.d/op-user-config.xml:ro
       - ./clickhouse/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh:ro
@@ -68,8 +68,8 @@ services:
         soft: 262144
         hard: 262144
 
-  op-api:
-    image: lindesvard/openpanel-api:latest
+  ags-api:
+    image: ags-analytics/openpanel-api:latest
     restart: always
     command: >
       sh -c "
@@ -84,20 +84,20 @@ services:
       timeout: 5s
       retries: 5
     depends_on:
-      op-db:
+      ags-db:
         condition: service_healthy
-      op-ch:
+      ags-ch:
         condition: service_healthy
-      op-kv:
+      ags-kv:
         condition: service_healthy
     env_file:
       - .env
 
-  op-dashboard:
-    image: lindesvard/openpanel-dashboard:latest
+  ags-dashboard:
+    image: ags-analytics/openpanel-dashboard:latest
     restart: always
     depends_on:
-      op-api:
+      ags-api:
         condition: service_healthy
     env_file:
       - .env
@@ -107,11 +107,11 @@ services:
       timeout: 5s
       retries: 5
 
-  op-worker:
-    image: lindesvard/openpanel-worker:latest
+  ags-worker:
+    image: ags-analytics/openpanel-worker:latest
     restart: always
     depends_on:
-      op-api:
+      ags-api:
         condition: service_healthy
     env_file:
       - .env
@@ -125,15 +125,15 @@ services:
       replicas: $OP_WORKER_REPLICAS
 
 volumes:
-  op-db-data:
+  ags-db-data:
     driver: local
-  op-kv-data:
+  ags-kv-data:
     driver: local
-  op-ch-data:
+  ags-ch-data:
     driver: local
-  op-ch-logs:
+  ags-ch-logs:
     driver: local
-  op-proxy-data:
+  ags-proxy-data:
     driver: local
-  op-proxy-config:
+  ags-proxy-config:
     driver: local

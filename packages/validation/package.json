@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/validation",
+  "name": "@ags-analytics/validation",
   "version": "0.0.1",
   "main": "index.ts",
   "scripts": {

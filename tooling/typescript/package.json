@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/tsconfig",
+  "name": "@ags-analytics/tsconfig",
   "version": "0.1.0",
   "private": true,
   "files": ["base.json", "sdk.json", "tsup.config.json"],

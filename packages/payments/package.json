@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/payments",
+  "name": "@ags-analytics/payments",
   "version": "0.0.1",
   "main": "index.ts",
   "scripts": {

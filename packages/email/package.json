@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/email",
+  "name": "@ags-analytics/email",
   "version": "0.0.1",
   "main": "index.ts",
   "scripts": {

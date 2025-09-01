@@ -37,18 +37,18 @@ export function Hero() {
             </Tag>
             <h1
               className="text-4xl md:text-5xl font-extrabold leading-[1.1]"
-              title="An open-source alternative to Mixpanel"
+              title="Self-Serve Analytics for SaaS Growth"
             >
-              An open-source alternative to <Competition />
+              Self-Serve Analytics for SaaS Growth
             </h1>
             <p className="text-xl text-muted-foreground">
-              An open-source web and product analytics platform that combines
-              the power of Mixpanel with the ease of Plausible and one of the
-              best Google Analytics replacements.
+              Specialized analytics platform for optimizing self-serve user flows
+              in SaaS products. Built for growth agencies to identify bottlenecks
+              in registration, payment, and activation processes.
             </p>
           </div>
           <Button size="lg" asChild className="group w-72">
-            <Link href="https://dashboard.openpanel.dev/onboarding">
+            <Link href="https://app.agsanalytics.com/onboarding">
               Get started now
               <ChevronRightIcon className="size-4 group-hover:translate-x-1 transition-transform group-hover:scale-125" />
             </Link>
@@ -83,17 +83,17 @@ export function Hero() {
               <a
                 target="_blank"
                 rel="noreferrer noopener nofollow"
-                href="https://demo.openpanel.dev/demo/shoey"
+                href="https://demo.agsanalytics.com/demo/shoey"
                 className="group flex-1 mx-4 px-3 py-1 text-sm bg-background rounded-md border border-border flex items-center gap-2"
               >
                 <span className="text-muted-foreground flex-1">
-                  https://demo.openpanel.dev
+                  https://demo.agsanalytics.com
                 </span>
                 <ArrowRightIcon className="size-4 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
             </div>
             <iframe
-              src={'https://demo.openpanel.dev/demo/shoey?range=lastHour'}
+              src={'https://demo.agsanalytics.com/demo/shoey?range=lastHour'}
               className="w-full h-full"
               title="Live preview"
               scrolling="no"
@@ -104,7 +104,7 @@ export function Hero() {
                 className="group-hover:opacity-100 opacity-0 transition-opacity pointer-events-auto"
               >
                 <Link
-                  href="https://demo.openpanel.dev/demo/shoey"
+                  href="https://demo.agsanalytics.com/demo/shoey"
                   rel="noreferrer noopener nofollow"
                   target="_blank"
                 >

@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/json",
+  "name": "@ags-analytics/json",
   "version": "0.0.1",
   "main": "index.ts",
   "scripts": {

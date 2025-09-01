@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/db",
+  "name": "@ags-analytics/db",
   "version": "0.0.1",
   "main": "index.ts",
   "scripts": {

@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/constants",
+  "name": "@ags-analytics/constants",
   "version": "0.0.1",
   "main": "index.ts",
   "scripts": {

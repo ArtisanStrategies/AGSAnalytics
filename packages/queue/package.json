@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/queue",
+  "name": "@ags-analytics/queue",
   "version": "0.0.1",
   "main": "index.ts",
   "scripts": {

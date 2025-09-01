@@ -1,5 +1,5 @@
 {
-  "name": "@openpanel/redis",
+  "name": "@ags-analytics/redis",
   "version": "0.0.1",
   "main": "index.ts",
   "scripts": {

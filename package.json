@@ -1,9 +1,9 @@
 {
-  "name": "@openpanel/root",
+  "name": "@ags-analytics/root",
   "version": "1.0.0",
   "private": true,
-  "license": "MIT",
-  "author": "Carl-Gerhard Lindesvärd",
+  "license": "AGPL-3.0",
+  "author": "AGS Analytics (forked from OpenPanel)",
   "packageManager": "pnpm@9.15.0",
   "scripts": {
     "test": "vitest",
